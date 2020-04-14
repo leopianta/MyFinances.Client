@@ -1,0 +1,43 @@
+<p *ngIf="!users"><img src="../assets/images/loading.gif" style="height: 150px;
+    margin-top: 100%;"/></p>
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-hover tabela" *ngIf="users">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Login</th>
+                <th scope="col">Tipo</th>
+                <th colspan="2">Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{ user.Id}}</td>
+                    <td>{{ user.nome }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.tipoUsuario }}</td>
+                    <td><a class="btn-sm btn-warning btn-text" style="cursor: pointer;">Editar</a></td>
+                    <td><a class="btn-sm btn-danger btn-text" style="cursor: pointer;">Excluir</a></td>
+                </tr>
+            <!-- <tr>
+                <th scope="row">1</th>
+                <td>Leonardo</td>
+                <td>leo.a.pianta@gmail.com</td>
+                <td>Administrador</td>
+                <td><a class="btn-sm btn-warning btn-text" style="cursor: pointer;">Editar</a></td>
+                <td><a class="btn-sm btn-danger btn-text" style="cursor: pointer;">Excluir</a></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Giselle</td>
+                <td>gisabitten@hotmail.com</td>
+                <td>Usuario</td>
+                <td><a class="btn-sm btn-warning btn-text" style="cursor: pointer;">Editar</a></td>
+                <td><a class="btn-sm btn-danger btn-text" style="cursor: pointer;">Excluir</a></td>
+            </tr> -->
+            </tbody>
+        </table>
+    </div>
+</div>

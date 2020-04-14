@@ -1,0 +1,39 @@
+.form-signin {
+    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+    margin: auto;
+  }
+  
+  
+    .form-signin input {
+      margin-bottom: -1px;
+      border-color: #fbfbfb;
+    }
+  
+    .form-signin input:hover {
+      border-color:#b7b7b7;
+    }
+  
+    .form-signin .form-control{
+      position:relative;
+      box-sizing:border-box;
+      height:auto;
+      padding:10px;
+      font-size:16px;
+    }
+  
+    .login{
+      color:#668;
+    }
+  
+  .card {
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0 10px 0px #b6b4b4;
+  }
+  .logo-signin{
+    height: 40px;
+  }
+  
