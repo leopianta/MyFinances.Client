@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import {Injectable, Inject} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { User } from "src/app/models/user";
 
 
@@ -16,6 +16,7 @@ import { User } from "src/app/models/user";
 
 export class ListUsuarioComponent implements OnInit {
   public users: User[];
+  public user;
   private baseURL: string;
   // private _user: User;
 
@@ -33,7 +34,13 @@ public getUsers(){
 } 
 
   ngOnInit(): void {
-    // this.getUsers;
+    this.user = new User();
   }
 
+Excluir() {
+  // alert("ID: " + Id);
+  return this.http.get<boolean>("https://localhost:44395/api/user/DeleteUser/2"); 
+  this.getUsers();  
+  }
 }
+
