@@ -37,10 +37,14 @@ public getUsers(){
     this.user = new User();
   }
 
-Excluir() {
+Excluir(Id) {
   // alert("ID: " + Id);
-  return this.http.get<boolean>("https://localhost:44395/api/user/DeleteUser/2"); 
-  this.getUsers();  
+  // console.log("ID: " + Id);
+  return this.http.delete("https://localhost:44395/api/user/"+Id).subscribe(result => {
+    if(result){
+      window.location.reload();
+    }
+  }, error => console.error(error));  
   }
 }
 
