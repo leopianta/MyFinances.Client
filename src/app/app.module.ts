@@ -11,8 +11,10 @@ import { LoginComponent } from './login/login.component';
 import { ListUsuarioComponent } from './user/list-usuario/list-usuario.component';
 import { ListFinancesComponent } from './finances/list-finances/list-finances.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { ConfigComponent } from './config/config.component';
 
 import { UserService } from 'src/app/services/user/user.service';
+
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { UserService } from 'src/app/services/user/user.service';
     ListUsuarioComponent,
     ListFinancesComponent,
     NavMenuComponent,
+    ConfigComponent,
   ],
   imports: [
     BrowserModule,

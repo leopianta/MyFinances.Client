@@ -12,20 +12,15 @@ export class GuardaRotas implements CanActivate {
     constructor(private router: Router, private userService: UserService) {
 
     }
-    // constructor(private router: Router) {
 
-    // }
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {        
         //Se usuário autenticado, retorna verdadeiro
-        
-        
-        // if (this.userService.usuario_autenticado()) {            
-        //     return true;
-        // }
-        
-        // this.router.navigate(["/login"], { queryParams: { returnUrl: state.url } });
-        // return false;
-
-        return true;
+ 
+        if (this.userService.usuario_autenticado()) {           
+            return true;
+        }else{           
+            this.router.navigate(["/login"], { queryParams: { returnUrl: state.url } });
+            return false;
+        }
     }
 }

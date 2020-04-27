@@ -21,9 +21,17 @@ export class UserService {
 
 get user(): User{
     let user_json = sessionStorage.getItem("usuario-autenticado");
-    this._user = JSON.parse(user_json);
-    return this._user;
-}
+    if ( user_json != null){
+        if (user_json != ""){
+          this._user = JSON.parse(user_json).ObjetoResposta;
+          return this._user;
+        }else{
+          return new User();
+        }
+      }else{
+        return null;
+      }
+    }
 
 // constructor() { }
 
@@ -45,28 +53,29 @@ public validateUser(user: User): Observable<User>{
         email: user.email,
         senha: user.senha
     }     
-    return this.http.post<User>(this.baseURL + "api/usuario/VerificarUsuario", body, { headers });
+    return this.http.post<User>(this.baseURL + "api/user/VerificarUsuario", body, { headers });
 }    
 
-public usuario_autenticado():boolean{
-    return this._user != null && this._user.email != "" && this._user.senha != "";
+public usuario_autenticado():boolean{    
+    return this.user != null && this.user.email != "" && this.user.senha != "";
 }
 
 public limpar_sessao(){
-    sessionStorage.setItem("usuario-autenticado", "");
+  // sessionStorage.setItem("usuario-autenticado", "");
+  sessionStorage.clear();
     this._user = null;
 }
 
-public cadastrarUsuario(user: User): Observable<User> {
-const headers = new HttpHeaders().set('content-type', 'application/json');
-  var body = {
-    email: user.email,
-    senha: user.senha,
-    nome: user.nome,
-    tipo: user.tipo
-  }
- return this.http.post<User>(this.baseURL + "api/user", body, { headers });
-}
+// public cadastrarUsuario(user: User): Observable<User> {
+// const headers = new HttpHeaders().set('content-type', 'application/json');
+//   var body = {
+//     email: user.email,
+//     senha: user.senha,
+//     nome: user.nome,
+//     tipo: user.tipo
+//   }
+//  return this.http.post<User>(this.baseURL + "api/user", body, { headers });
+// }
 
   
 }

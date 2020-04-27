@@ -24,7 +24,7 @@
   .toolbar .user-logo {
     height: 40px;
     margin: 0 16px;
-    fill: white;
+    color: white;
   }
 
   .toolbar .user-logo:hover {

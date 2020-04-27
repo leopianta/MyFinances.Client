@@ -1,0 +1,33 @@
+.card {
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0 10px 0px #b6b4b4;
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .card:hover {
+    box-shadow: 0px 0 10px 0px #6e6e6e;
+  }
+
+  .img-card{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0em;
+  }
+
+  .card-body{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0rem;
+  }
+
+  .card-text{
+    font-size: smaller;
+  }
+  .menu-config-link{
+    text-decoration: none;
+  }

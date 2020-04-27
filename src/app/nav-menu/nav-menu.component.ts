@@ -22,13 +22,12 @@ export class NavMenuComponent  {
     this.isExpanded = !this.isExpanded;
   }
   public usuarioLogado(): boolean{    
-    return true;//this.userServico.usuario_autenticado();
+    return this.userServico.usuario_autenticado();
   }
 
   sair(){
-    // this.userServico.limpar_sessao();
+     this.userServico.limpar_sessao();
     this.router.navigate(['/']);
-  }
-  
-
+    window.location.reload();
+  } 
 }
