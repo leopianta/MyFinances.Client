@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from "../../app/models/user";
 import { Router, ActivatedRoute } from "@angular/router";
 import { UserService } from "src/app/services/user/user.service";
+import {ElementRef } from "@angular/core";
 
 
 @Component({
@@ -15,15 +16,16 @@ export class LoginComponent implements OnInit {
   public mensagem: string;
   public ativar_spinner: boolean;
 
-  constructor(private router: Router, private activatedRouter: ActivatedRoute, private userService: UserService) {        
+  constructor(private router: Router, private activatedRouter: ActivatedRoute, private userService: UserService, private el: ElementRef) {        
   }
   
-  
-  ngOnInit(): void {
+   ngOnInit(): void {
     console.log(this.activatedRouter.snapshot.queryParams["returnUrl"]);
       this.returnUrl = this.activatedRouter.snapshot.queryParams["returnUrl"];
       this.user = new User();
   }
+
+
 
   entrar() {
     this.ativar_spinner = true;
@@ -35,12 +37,13 @@ export class LoginComponent implements OnInit {
                 this.router.navigate(['/inicio']);
             }else{
                 this.router.navigate([this.returnUrl]);
-            }
+            }           
         },
         err => {
             console.log(err.error);
             this.mensagem = err.error;
             this.ativar_spinner = false;
+            alert('Login ou senha incorretos');
         }
     );
   }

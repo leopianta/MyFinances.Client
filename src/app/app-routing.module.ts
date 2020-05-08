@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { ListUsuarioComponent } from './user/list-usuario/list-usuario.component';
 import { ListFinancesComponent } from './finances/list-finances/list-finances.component';
 import { ConfigComponent } from './config/config.component';
+import { NewUserComponent } from './user/new-user/new-user.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
    { path: 'inicio', component: InicioComponent, canActivate: [GuardaRotas] },
    { path: 'login', component: LoginComponent },
    { path: 'users', component: ListUsuarioComponent, canActivate: [GuardaRotas] },
+   { path: 'usernew', component: NewUserComponent, canActivate: [GuardaRotas] },
    { path: 'finances', component: ListFinancesComponent, canActivate: [GuardaRotas] },
    { path: 'config', component: ConfigComponent, canActivate: [GuardaRotas] },
 ];

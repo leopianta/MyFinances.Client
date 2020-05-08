@@ -14,6 +14,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { ConfigComponent } from './config/config.component';
 
 import { UserService } from 'src/app/services/user/user.service';
+import { NewUserComponent } from './user/new-user/new-user.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { UserService } from 'src/app/services/user/user.service';
     ListFinancesComponent,
     NavMenuComponent,
     ConfigComponent,
+    NewUserComponent,
   ],
   imports: [
     BrowserModule,
