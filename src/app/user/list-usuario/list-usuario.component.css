@@ -89,3 +89,7 @@
   .btn-text{
     color:#ffffff;
   }
+
+  .btn-text:hover{
+    color:#d8d8d8;
+  }

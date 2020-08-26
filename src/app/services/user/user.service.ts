@@ -61,21 +61,31 @@ public usuario_autenticado():boolean{
 }
 
 public limpar_sessao(){
-  // sessionStorage.setItem("usuario-autenticado", "");
   sessionStorage.clear();
     this._user = null;
 }
 
-// public cadastrarUsuario(user: User): Observable<User> {
-// const headers = new HttpHeaders().set('content-type', 'application/json');
-//   var body = {
-//     email: user.email,
-//     senha: user.senha,
-//     nome: user.nome,
-//     tipo: user.tipo
-//   }
-//  return this.http.post<User>(this.baseURL + "api/user", body, { headers });
-// }
+public cadastrarUsuario(user: User): Observable<User> {
+const headers = new HttpHeaders().set('content-type', 'application/json');
+  var body = {
+    email: user.email,
+    senha: user.senha,
+    nome: user.nome,
+    tipoUsuario: user.tipoUsuario
+  }
+    return this.http.post<User>(this.baseURL + "api/user", body, { headers });
+}
 
+public alterarUsuario(user: User): Observable<User> {
+  const headers = new HttpHeaders().set('content-type', 'application/json');
+    var body = {
+      id: user.id,
+      email: user.email,
+      senha: user.senha,
+      nome: user.nome,
+      tipoUsuario: user.tipoUsuario
+    }
+   return this.http.put<User>(this.baseURL + "api/user", body, { headers });
+  }
   
 }

@@ -16,7 +16,7 @@ const routes: Routes = [
    { path: 'inicio', component: InicioComponent, canActivate: [GuardaRotas] },
    { path: 'login', component: LoginComponent },
    { path: 'users', component: ListUsuarioComponent, canActivate: [GuardaRotas] },
-   { path: 'usernew', component: NewUserComponent, canActivate: [GuardaRotas] },
+   { path: 'newuser', component: NewUserComponent},
    { path: 'finances', component: ListFinancesComponent, canActivate: [GuardaRotas] },
    { path: 'config', component: ConfigComponent, canActivate: [GuardaRotas] },
 ];

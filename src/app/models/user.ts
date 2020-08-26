@@ -3,7 +3,7 @@ export class User {
     nome: string;
     email: string;
     senha: string;
-    tipo: string; //sera uma outra class ou enum
+    tipoUsuario: number; //sera uma outra class ou enum
 }
 
 
